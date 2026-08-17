@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const n8nWebhookUrl = import.meta.env.PUBLIC_N8N_WEBHOOK_URL || '';
 ---
 
 <Layout title="LOGISPERÚ | Portal de Homologación y Gestión de Proveedores">
@@ -1215,11 +1216,13 @@ import Layout from '../layouts/Layout.astro';
               </p>
             </div>
 
-            <form id="lead-form" class="space-y-4">
+            <form id="lead-form" data-webhook={n8nWebhookUrl} class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
-                  <label class="text-xs font-semibold text-slate-700">Nombre Completo *</label>
+                  <label class="text-xs font-semibold text-slate-700" for="lead-name">Nombre Completo *</label>
                   <input
+                    id="lead-name"
+                    name="nombre"
                     type="text"
                     required
                     placeholder="Ej: Carlos Vega"
@@ -1227,8 +1230,10 @@ import Layout from '../layouts/Layout.astro';
                   />
                 </div>
                 <div class="space-y-1.5">
-                  <label class="text-xs font-semibold text-slate-700">Correo Corporativo *</label>
+                  <label class="text-xs font-semibold text-slate-700" for="lead-email">Correo Corporativo *</label>
                   <input
+                    id="lead-email"
+                    name="email"
                     type="email"
                     required
                     placeholder="cvega@tuempresa.com"
@@ -1239,8 +1244,10 @@ import Layout from '../layouts/Layout.astro';
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
-                  <label class="text-xs font-semibold text-slate-700">Teléfono / WhatsApp *</label>
+                  <label class="text-xs font-semibold text-slate-700" for="lead-phone">Teléfono / WhatsApp *</label>
                   <input
+                    id="lead-phone"
+                    name="telefono"
                     type="tel"
                     required
                     placeholder="+51 987 654 321"
@@ -1248,8 +1255,10 @@ import Layout from '../layouts/Layout.astro';
                   />
                 </div>
                 <div class="space-y-1.5">
-                  <label class="text-xs font-semibold text-slate-700">Empresa / Razón Social *</label>
+                  <label class="text-xs font-semibold text-slate-700" for="lead-company">Empresa / Razón Social *</label>
                   <input
+                    id="lead-company"
+                    name="empresa"
                     type="text"
                     required
                     placeholder="Tu Empresa S.A.C."
@@ -1260,33 +1269,39 @@ import Layout from '../layouts/Layout.astro';
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="space-y-1.5">
-                  <label class="text-xs font-semibold text-slate-700">Cargo / Área</label>
+                  <label class="text-xs font-semibold text-slate-700" for="lead-role">Cargo / Área</label>
                   <select
+                    id="lead-role"
+                    name="cargo"
                     class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
                   >
-                    <option value="Gerente de Compras">Gerente de Compras / Abastecimiento</option>
-                    <option value="Jefe de Logística">Jefe de Logística / Cadena de Suministro</option>
-                    <option value="Finanzas / Tesorería">Finanzas / Tesorería / Contabilidad</option>
-                    <option value="TI / Sistemas">TI / Sistemas / Transformación Digital</option>
-                    <option value="Gerencia General">Gerencia General / Dirección</option>
+                    <option value="Gerente de Compras / Abastecimiento">Gerente de Compras / Abastecimiento</option>
+                    <option value="Jefe de Logística / Cadena de Suministro">Jefe de Logística / Cadena de Suministro</option>
+                    <option value="Finanzas / Tesorería / Contabilidad">Finanzas / Tesorería / Contabilidad</option>
+                    <option value="TI / Sistemas / Transformación Digital">TI / Sistemas / Transformación Digital</option>
+                    <option value="Gerencia General / Dirección">Gerencia General / Dirección</option>
                   </select>
                 </div>
                 <div class="space-y-1.5">
-                  <label class="text-xs font-semibold text-slate-700">Volumen de Proveedores</label>
+                  <label class="text-xs font-semibold text-slate-700" for="lead-volume">Volumen de Proveedores</label>
                   <select
+                    id="lead-volume"
+                    name="volumen"
                     class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
                   >
-                    <option value="Menos de 100">Menos de 100 proveedores</option>
-                    <option value="100 a 500">100 a 500 proveedores</option>
-                    <option value="500 a 2,000">500 a 2,000 proveedores</option>
-                    <option value="Más de 2,000">Más de 2,000 proveedores</option>
+                    <option value="Menos de 100 proveedores">Menos de 100 proveedores</option>
+                    <option value="100 a 500 proveedores" selected>100 a 500 proveedores</option>
+                    <option value="500 a 2,000 proveedores">500 a 2,000 proveedores</option>
+                    <option value="Más de 2,000 proveedores">Más de 2,000 proveedores</option>
                   </select>
                 </div>
               </div>
 
               <div class="space-y-1.5">
-                <label class="text-xs font-semibold text-slate-700">Comentario o Requerimiento Específico (Opcional)</label>
+                <label class="text-xs font-semibold text-slate-700" for="lead-message">Comentario o Requerimiento Específico (Opcional)</label>
                 <textarea
+                  id="lead-message"
+                  name="comentario"
                   rows="2"
                   placeholder="Cuéntanos brevemente qué desafíos buscas resolver..."
                   class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 p-2.5 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600 resize-none"
@@ -1294,10 +1309,11 @@ import Layout from '../layouts/Layout.astro';
               </div>
 
               <button
+                id="lead-submit-btn"
                 type="submit"
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm shadow-md transition-all cursor-pointer"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
               >
-                Solicitar Demostración Comercial
+                <span>Solicitar Demostración Comercial</span>
               </button>
 
               <p class="text-[10px] text-slate-400 text-center leading-tight">
@@ -1420,12 +1436,75 @@ import Layout from '../layouts/Layout.astro';
       });
     });
 
-    // Lead Form Handler
+    // Lead Form Handler with n8n Webhook
     const leadForm = document.getElementById('lead-form');
     const successBox = document.getElementById('form-success-box');
+    const submitBtn = document.getElementById('lead-submit-btn');
+
     if (leadForm && successBox) {
-      leadForm.addEventListener('submit', (e) => {
+      leadForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        const nameInput = document.getElementById('lead-name') as HTMLInputElement | null;
+        const emailInput = document.getElementById('lead-email') as HTMLInputElement | null;
+        const phoneInput = document.getElementById('lead-phone') as HTMLInputElement | null;
+        const companyInput = document.getElementById('lead-company') as HTMLInputElement | null;
+        const roleSelect = document.getElementById('lead-role') as HTMLSelectElement | null;
+        const volumeSelect = document.getElementById('lead-volume') as HTMLSelectElement | null;
+        const messageInput = document.getElementById('lead-message') as HTMLTextAreaElement | null;
+
+        const nombre = nameInput?.value?.trim() || '';
+        const email = emailInput?.value?.trim() || '';
+        const telefono = phoneInput?.value?.trim() || '';
+        const empresa = companyInput?.value?.trim() || '';
+        const cargo = roleSelect?.value || 'No especificado';
+        const volumen = volumeSelect?.value || '100 a 500 proveedores';
+        const comentario = messageInput?.value?.trim() || 'Sin comentarios adicionales';
+
+        // Agrupación de todos los datos en la variable 'mensaje'
+        const mensaje = `Nuevo Lead Recibido - LOGISPERU\n- Nombre: ${nombre}\n- Correo: ${email}\n- Telefono / WhatsApp: ${telefono}\n- Empresa: ${empresa}\n- Cargo: ${cargo}\n- Volumen de Proveedores: ${volumen}\n- Comentarios: ${comentario}\n- Fecha: ${new Date().toLocaleString('es-PE', { timeZone: 'America/Lima' })}`;
+
+        const payload = {
+          mensaje: mensaje,
+          nombre: nombre,
+          email: email,
+          telefono: telefono,
+          empresa: empresa,
+          cargo: cargo,
+          volumen: volumen,
+          comentario: comentario,
+          origen: 'Landing Page LOGISPERU',
+          fecha_iso: new Date().toISOString()
+        };
+
+        if (submitBtn) {
+          submitBtn.setAttribute('disabled', 'true');
+          submitBtn.innerHTML = `
+            <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Enviando solicitud...</span>
+          `;
+          submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+        }
+
+        const webhookUrl = leadForm.getAttribute('data-webhook') || (import.meta.env.PUBLIC_N8N_WEBHOOK_URL as string);
+
+        if (webhookUrl) {
+          try {
+            await fetch(webhookUrl, {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(payload),
+            });
+          } catch (error) {
+            console.error('Error enviando lead a n8n:', error);
+          }
+        }
+
         leadForm.classList.add('hidden');
         successBox.classList.remove('hidden');
       });
