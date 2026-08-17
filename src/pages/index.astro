@@ -1,11 +1,1434 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="LOGISPERÚ | Portal de Homologación y Gestión de Proveedores">
+  <!-- 1. HEADER / STICKY NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
+    <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
+      {/* Brand Logo */}
+      <a href="/" class="flex items-center gap-3 group">
+        <img src="/LOGISPERULOGO.svg" alt="LOGISPERÚ" class="h-9 w-auto object-contain" />
+      </a>
+
+      {/* Desktop Navigation */}
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600">
+        <a href="#modulos" class="transition-colors hover:text-blue-600">Módulos</a>
+        <a href="#sectores" class="transition-colors hover:text-blue-600">Sectores</a>
+        <a href="#problema" class="transition-colors hover:text-blue-600">Diagnóstico</a>
+        <a href="#roi" class="transition-colors hover:text-blue-600">Métricas</a>
+        <a href="#planes" class="transition-colors hover:text-blue-600">Planes</a>
+        <a href="#faq" class="transition-colors hover:text-blue-600">Preguntas</a>
+      </nav>
+
+      {/* Header Action CTAs */}
+      <div class="flex items-center gap-3">
+        <a
+          href="https://proveedores.logisperu.pe/login"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex px-3.5 py-2 text-xs sm:text-sm font-medium text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-lg transition-colors"
+        >
+          Acceso al Portal
+        </a>
+        <a
+          href="#demo-form"
+          class="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all shadow-sm"
+        >
+          Solicitar Demostración
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1">
+    {/* 2. HERO SECTION */}
+    <section class="relative overflow-hidden bg-white border-b border-slate-200 py-16 md:py-24">
+      {/* Background grid texture */}
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-60 pointer-events-none"></div>
+
+      <div class="relative mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
+        <div class="max-w-3xl mx-auto text-center space-y-6">
+          {/* Functional Category Descriptor */}
+          <div class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1 text-xs font-mono font-semibold text-slate-700">
+            <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+            PORTAL DE HOMOLOGACIÓN Y GESTIÓN DE PROVEEDORES
+          </div>
+
+          {/* H1 Headline */}
+          <h1 class="text-4xl font-bold tracking-tight text-slate-950 sm:text-5xl md:text-6xl leading-[1.12] text-balance">
+            Centraliza, homologa y audita a tus proveedores en un solo lugar.
+          </h1>
+
+          {/* Subtitle */}
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+            Plataforma B2B para compras y abastecimiento. Permite que tus proveedores registren su información legal, tributaria y bancaria en un entorno digital seguro, reduciendo el tiempo de alta y aprobación a 48 horas.
+          </p>
+
+          {/* CTAs */}
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <a
+              href="#demo-form"
+              class="inline-flex items-center gap-2 px-7 py-3 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-md shadow-blue-600/15"
+            >
+              <span>Solicitar Demostración Comercial</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </a>
+            <a
+              href="#modulos"
+              class="inline-flex items-center px-6 py-3 text-sm font-semibold text-slate-700 bg-white hover:bg-slate-50 border border-slate-300 rounded-xl transition-colors"
+            >
+              Ver Módulos del Sistema
+            </a>
+          </div>
+
+          {/* Metadata Validation Bar */}
+          <div class="pt-8 grid grid-cols-2 md:grid-cols-4 gap-3 text-left">
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/80 space-y-1">
+              <div class="flex items-center gap-1.5 text-blue-600 font-bold text-xs">
+                <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span class="text-slate-900">SUNAT & RUC</span>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-tight">Validación de RUC 11 dígitos y poderes legales.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/80 space-y-1">
+              <div class="flex items-center gap-1.5 text-blue-600 font-bold text-xs">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+                <span class="text-slate-900">Bancos & CCI</span>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-tight">Cuentas corrientes y detracción verificadas.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/80 space-y-1">
+              <div class="flex items-center gap-1.5 text-blue-600 font-bold text-xs">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+                <span class="text-slate-900">MinIO / S3 Cifrado</span>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-tight">Almacenamiento de archivos con cifrado TLS.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl border border-slate-200 bg-slate-50/80 space-y-1">
+              <div class="flex items-center gap-1.5 text-blue-600 font-bold text-xs">
+                <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+                <span class="text-slate-900">Marca Blanca</span>
+              </div>
+              <p class="text-[11px] text-slate-500 leading-tight">Tu logo, colores y dominio en 5 días.</p>
+            </div>
+          </div>
+        </div>
+
+        {/* High-Fidelity UI Mockup */}
+        <div class="rounded-2xl border border-slate-200 bg-slate-900 p-2 shadow-2xl">
+          <div class="rounded-xl border border-slate-800 bg-slate-950 overflow-hidden text-slate-100 font-sans">
+            {/* Window Top Bar */}
+            <div class="flex items-center justify-between px-4 py-3 border-b border-slate-800 bg-slate-900/60">
+              <div class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="h-3 w-3 rounded-full bg-amber-500/80 inline-block"></span>
+                <span class="h-3 w-3 rounded-full bg-emerald-500/80 inline-block"></span>
+                <span class="text-xs text-slate-400 font-mono ml-2">proveedores.logisperu.pe/admin/providers</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs text-slate-400">
+                <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 font-mono text-[11px] border border-emerald-500/20">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                  Sistema Activo
+                </span>
+              </div>
+            </div>
+
+            {/* Dashboard Inner Screen */}
+            <div class="p-6 space-y-6">
+              {/* Stats Summary */}
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="rounded-lg bg-slate-900/90 border border-slate-800 p-3.5">
+                  <div class="text-xs text-slate-400 font-medium">Proveedores Registrados</div>
+                  <div class="text-2xl font-bold font-mono text-white mt-1">524</div>
+                  <div class="text-[10px] text-emerald-400 mt-0.5">+14 este mes</div>
+                </div>
+                <div class="rounded-lg bg-slate-900/90 border border-slate-800 p-3.5">
+                  <div class="text-xs text-slate-400 font-medium">Pendientes de Aprobación</div>
+                  <div class="text-2xl font-bold font-mono text-amber-400 mt-1">18</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Requieren revisión técnica</div>
+                </div>
+                <div class="rounded-lg bg-slate-900/90 border border-slate-800 p-3.5">
+                  <div class="text-xs text-slate-400 font-medium">Tiempo Promedio de Alta</div>
+                  <div class="text-2xl font-bold font-mono text-blue-400 mt-1">1.8 d</div>
+                  <div class="text-[10px] text-blue-300 mt-0.5">-80% vs proceso manual</div>
+                </div>
+                <div class="rounded-lg bg-slate-900/90 border border-slate-800 p-3.5">
+                  <div class="text-xs text-slate-400 font-medium">Expedientes Digitales</div>
+                  <div class="text-2xl font-bold font-mono text-emerald-400 mt-1">100%</div>
+                  <div class="text-[10px] text-slate-400 mt-0.5">Almacenados en MinIO S3</div>
+                </div>
+              </div>
+
+              {/* Providers Table Mockup */}
+              <div class="rounded-xl border border-slate-800 overflow-hidden bg-slate-900/40">
+                <div class="px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+                  <span class="text-xs font-semibold text-slate-200">Bandeja de Homologación de Proveedores</span>
+                  <span class="text-[11px] text-slate-400 font-mono">Filtro: Todos los estados</span>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-xs">
+                    <thead class="bg-slate-900 text-slate-400 uppercase text-[10px] border-b border-slate-800">
+                      <tr>
+                        <th class="px-4 py-2.5">Razón Social & RUC</th>
+                        <th class="px-4 py-2.5">Familia de Suministro</th>
+                        <th class="px-4 py-2.5">Condición de Pago</th>
+                        <th class="px-4 py-2.5">Estado</th>
+                        <th class="px-4 py-2.5 text-right">Acción</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800 text-slate-300">
+                      <tr class="hover:bg-slate-800/50 transition-colors">
+                        <td class="px-4 py-3">
+                          <div class="font-semibold text-white">FERREYROS S.A.</div>
+                          <div class="text-[11px] font-mono text-slate-400">RUC: 20100028639</div>
+                        </td>
+                        <td class="px-4 py-3">
+                          <span class="px-2 py-0.5 rounded bg-blue-500/10 text-blue-300 text-[11px] border border-blue-500/20">
+                            Repuestos Minería
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 font-mono">Crédito 30 días (USD)</td>
+                        <td class="px-4 py-3">
+                          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 text-[11px] font-medium border border-emerald-500/20">
+                            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                            Aprobado
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 text-right">
+                          <span class="text-blue-400 hover:text-blue-300 font-medium cursor-pointer">Ver Ficha 360° &rarr;</span>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-slate-800/50 transition-colors">
+                        <td class="px-4 py-3">
+                          <div class="font-semibold text-white">CORPORACIÓN ACEROS AREQUIPA S.A.</div>
+                          <div class="text-[11px] font-mono text-slate-400">RUC: 20370146994</div>
+                        </td>
+                        <td class="px-4 py-3">
+                          <span class="px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 text-[11px] border border-amber-500/20">
+                            Materiales Construcción
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 font-mono">Crédito 60 días (PEN)</td>
+                        <td class="px-4 py-3">
+                          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 text-[11px] font-medium border border-amber-500/20">
+                            <span class="h-1.5 w-1.5 rounded-full bg-amber-400"></span>
+                            En Revisión
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 text-right">
+                          <span class="text-blue-400 hover:text-blue-300 font-medium cursor-pointer">Evaluar Documentos &rarr;</span>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-slate-800/50 transition-colors">
+                        <td class="px-4 py-3">
+                          <div class="font-semibold text-white">TRANSPORTE Y LOGÍSTICA DEL PACÍFICO S.A.C.</div>
+                          <div class="text-[11px] font-mono text-slate-400">RUC: 20549281920</div>
+                        </td>
+                        <td class="px-4 py-3">
+                          <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 text-[11px] border border-purple-500/20">
+                            Transporte Carga Pesada
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 font-mono">Contado 15 días (PEN)</td>
+                        <td class="px-4 py-3">
+                          <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 text-[11px] font-medium border border-blue-500/20">
+                            <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+                            Pendiente
+                          </span>
+                        </td>
+                        <td class="px-4 py-3 text-right">
+                          <span class="text-blue-400 hover:text-blue-300 font-medium cursor-pointer">Revisar Alta &rarr;</span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 3. SECTORES INDUSTRIALES */}
+    <section id="sectores" class="py-20 bg-slate-50 border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
+        <div class="max-w-2xl space-y-3">
+          <div class="text-xs font-mono uppercase tracking-wider text-blue-600 font-bold">
+            Adaptabilidad por Rubro
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            Solución adaptada a los estándares de las principales industrias en Perú.
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Cada sector productivo tiene exigencias únicas de homologación. Nuestra plataforma se configura a la medida de tus políticas de abastecimiento.
+          </p>
+        </div>
+
+        {/* Sectors Grid with Pure SVGs */}
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Sector 1: Construcción */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Construcción e Infraestructura</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Control de subcontratistas, vigencia de pólizas CAR/SCTR, seguros de obra y consorcios para proyectos descentralizados.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-slate-500">Impacto en Obra</span>
+              <span class="text-emerald-600 font-bold">-70% retraso en compras</span>
+            </div>
+          </div>
+
+          {/* Sector 2: Minería */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Minería, Energía e Hidrocarburos</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Homologación rigurosa de estándares de seguridad (SST), impacto ambiental, antecedentes y control de proveedores locales.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-slate-500">Auditoría y Compliance</span>
+              <span class="text-emerald-600 font-bold">100% Trazabilidad</span>
+            </div>
+          </div>
+
+          {/* Sector 3: Logística */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Operadores Logísticos y Transporte</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Registro masivo de transportistas, seguros de carga (TREC), revisión técnica y validación de cuentas de detracción del Banco de la Nación.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-slate-500">Alta de Flotas</span>
+              <span class="text-emerald-600 font-bold">Alta masiva en 24h</span>
+            </div>
+          </div>
+
+          {/* Sector 4: Agro */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Agroindustria y Exportación</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Verificación de certificaciones técnicas, SENASA, GlobalGAP, trazabilidad de insumos agrícolas, fertilizantes y envases.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-slate-500">Calidad Fitosanitaria</span>
+              <span class="text-emerald-600 font-bold">Cero Observaciones</span>
+            </div>
+          </div>
+
+          {/* Sector 5: Retail */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Retail y Distribución Masiva</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Gestión masiva de condiciones de pago a 30/60/90 días, monedas (PEN/USD) y catálogo de líneas de suministro.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-slate-500">Acuerdos Comerciales</span>
+              <span class="text-emerald-600 font-bold">100% Blindaje</span>
+            </div>
+          </div>
+
+          {/* Sector 6: Salud */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12h6m-3-3v6m-9 1V7a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">Salud, Clínicas y Farmacéuticas</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Validación de registros sanitarios DIGEMID, licencias de droguería y cumplimiento normativo estricto.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono">
+              <span class="text-slate-500">Cumplimiento DIGEMID</span>
+              <span class="text-emerald-600 font-bold">Expediente Auditado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 4. DIAGNÓSTICO: EL PROBLEMA VS LA SOLUCIÓN */}
+    <section id="problema" class="py-20 bg-white border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
+        <div class="max-w-2xl space-y-3">
+          <div class="text-xs font-mono uppercase tracking-wider text-blue-600 font-bold">
+            Diagnóstico de Eficiencia
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            ¿Cuánto le cuesta a tu empresa gestionar proveedores a la antigua?
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            El intercambio desordenado de correos, PDFs dispersos y hojas de cálculo genera cuellos de botella en compras y riesgos financieros críticos.
+          </p>
+        </div>
+
+        {/* Comparison Grid */}
+        <div class="rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+          <div class="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+            {/* Traditional Side */}
+            <div class="p-8 bg-slate-50/60 space-y-6">
+              <div class="flex items-center gap-3 text-slate-700">
+                <div class="h-8 w-8 rounded-lg bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-slate-900">Gestión Tradicional (Manual / Excel)</h3>
+                  <p class="text-xs text-slate-500">Proceso fragmentado y con alto riesgo</p>
+                </div>
+              </div>
+
+              <ul class="space-y-4 text-xs text-slate-600">
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span><strong>Tiempos de alta de 2 a 4 semanas:</strong> Proveedores bloqueados esperando aprobación de compras.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span><strong>Riesgo de fraude y error en cuentas:</strong> Pagos transferidos a cuentas bancarias no auditadas.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span><strong>Documentos y poderes extraviados:</strong> Imposible responder con rapidez a auditorías SUNAT o ISO.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-red-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                  <span><strong>Cero visibilidad de categorías:</strong> Compradores no saben qué proveedor atiende qué línea de producto.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Logisperú Side */}
+            <div class="p-8 bg-white space-y-6">
+              <div class="flex items-center gap-3 text-blue-600">
+                <div class="h-8 w-8 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold text-sm">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="font-bold text-base text-slate-900">Ecosistema LOGISPERÚ</h3>
+                  <p class="text-xs text-slate-500">Automatizado, seguro y bajo tu propia marca</p>
+                </div>
+              </div>
+
+              <ul class="space-y-4 text-xs text-slate-700">
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>Aprobación ágil en 48 horas:</strong> Auto-registro guiado del proveedor desde cualquier dispositivo.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>Validación estricta de cuentas bancarias y CCI:</strong> Blindaje total de transferencias con constancias bancarias.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>Expediente 360° centralizado:</strong> Almacenamiento seguro en MinIO S3 con bitácora de auditoría inmutable.</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span><strong>Catálogo de Familias y Subfamilias:</strong> Clasificación inmediata de bienes y servicios para compras rápidas.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 5. MÓDULOS DEL SISTEMA */}
+    <section id="modulos" class="py-20 bg-slate-50 border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 space-y-16">
+        <div class="max-w-3xl space-y-3">
+          <div class="text-xs font-mono uppercase tracking-wider text-blue-600 font-bold">
+            Capacidades de la Plataforma
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            6 Módulos diseñados para compras corporativas de alto rendimiento.
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Todo lo que tu equipo necesita para homologar, evaluar y gestionar el ciclo de vida del proveedor en un solo entorno unificado.
+          </p>
+        </div>
+
+        {/* 6 Modules Grid with SVGs */}
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {/* Mod 1 */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">1. Onboarding Autónomo en 6 Pasos</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Wizard interactivo donde el proveedor ingresa representante legal, datos de empresa (RUC), familias de producto, condiciones comerciales, cuentas bancarias y carga de expedientes.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <span>Autoservicio 24/7</span>
+              <span class="text-blue-600 font-bold">6 Pasos Guiados</span>
+            </div>
+          </div>
+
+          {/* Mod 2 */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">2. Panel de Control y Perfil 360°</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Ficha técnica integral organizada en 6 pestañas: General, Condiciones Comerciales, Cuentas Bancarias, Contactos Clave, Documentación y Registro Histórico.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <span>Búsqueda instantánea</span>
+              <span class="text-blue-600 font-bold">Filtros por Estado</span>
+            </div>
+          </div>
+
+          {/* Mod 3 */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">3. Flujo de Aprobación y Auditoría</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Toma de decisiones transparente: aprobación con un clic o rechazo con notas explicativas de subsanación. Registro inmutable de evaluador, fecha y hora.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <span>Cero discrecionalidad</span>
+              <span class="text-blue-600 font-bold">Historial de Logs</span>
+            </div>
+          </div>
+
+          {/* Mod 4 */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">4. Catálogos Dinámicos de Suministro</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Taxonomía jerárquica de 6 macro-familias y 23 subcategorías preconfiguradas, editables desde el módulo de configuración administrativa.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <span>Segmentación precisa</span>
+              <span class="text-blue-600 font-bold">Familias / Subfamilias</span>
+            </div>
+          </div>
+
+          {/* Mod 5 */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">5. Despliegue Marca Blanca</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Personalización completa con la identidad de tu empresa: logotipo corporativo, paleta de colores, dominio propio (proveedores.tuempresa.com) y textos a medida.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <span>Tu propia marca</span>
+              <span class="text-blue-600 font-bold">Dominio Propio</span>
+            </div>
+          </div>
+
+          {/* Mod 6 */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-7 space-y-4 shadow-sm hover:border-blue-300 transition-all flex flex-col justify-between">
+            <div class="space-y-3">
+              <div class="h-11 w-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-lg text-slate-900">6. Almacenamiento MinIO & Postgres</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Almacenamiento seguro de objetos para documentos PDF/imágenes mediante MinIO con claves protegidas y base de datos relacional PostgreSQL de alto rendimiento.
+              </p>
+            </div>
+            <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-mono">
+              <span>Grado Enterprise</span>
+              <span class="text-blue-600 font-bold">Cifrado de Datos</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Interactive 360° Profile Viewer */}
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 lg:p-8 space-y-6 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <div>
+              <h4 class="font-bold text-slate-900 text-lg">Explorador Interactivo: Ficha 360° del Proveedor</h4>
+              <p class="text-xs text-slate-500">Haz clic en cada pestaña para previsualizar la información auditada:</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-600"></span>
+                Proveedor Homologado
+              </span>
+            </div>
+          </div>
+
+          {/* Tab Buttons with JS triggers */}
+          <div class="flex flex-wrap gap-2" id="profile-tabs">
+            <button data-tab="general" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-900 text-white shadow-sm cursor-pointer">
+              General
+            </button>
+            <button data-tab="condiciones" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer">
+              Condiciones
+            </button>
+            <button data-tab="cuentas" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer">
+              Cuentas Bancarias
+            </button>
+            <button data-tab="contactos" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer">
+              Contactos
+            </button>
+            <button data-tab="documentos" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer">
+              Documentos
+            </button>
+            <button data-tab="historial" class="tab-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200 cursor-pointer">
+              Historial / Logs
+            </button>
+          </div>
+
+          {/* Tab Contents */}
+          <div class="rounded-xl border border-slate-100 bg-slate-50/80 p-5 text-xs">
+            <div id="tab-content-general" class="tab-content grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div>
+                <span class="text-slate-400 block text-[11px]">Razón Social</span>
+                <strong class="text-slate-800">FERREYROS S.A.</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">RUC</span>
+                <strong class="font-mono text-slate-800">20100028639</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Representante Legal</span>
+                <strong class="text-slate-800">Gonzalo Echevarría</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Domicilio Fiscal</span>
+                <strong class="text-slate-800">Jr. Cristóbal de Peralta 820, Surco</strong>
+              </div>
+            </div>
+
+            <div id="tab-content-condiciones" class="tab-content hidden grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div>
+                <span class="text-slate-400 block text-[11px]">Moneda Principal</span>
+                <strong class="text-slate-800">Dólares Americanos (USD)</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Forma de Pago</span>
+                <strong class="text-slate-800">Crédito 30 días</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Tiempo de Entrega</span>
+                <strong class="text-slate-800">48 - 72 horas hábiles</strong>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Cobertura</span>
+                <strong class="text-slate-800">Nacional (Sedes Mineras)</strong>
+              </div>
+            </div>
+
+            <div id="tab-content-cuentas" class="tab-content hidden grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div class="p-3 bg-white rounded-lg border border-slate-200">
+                <span class="text-slate-400 block text-[11px]">Banco de Crédito del Perú (BCP) - Corriente USD</span>
+                <strong class="font-mono text-slate-900 block mt-0.5">193-98765432-1-20</strong>
+                <span class="text-[11px] font-mono text-slate-500">CCI: 002-193-009876543210-20</span>
+              </div>
+              <div class="p-3 bg-white rounded-lg border border-slate-200">
+                <span class="text-slate-400 block text-[11px]">Banco de la Nación - Cuenta Detracciones (PEN)</span>
+                <strong class="font-mono text-slate-900 block mt-0.5">00-058-129482</strong>
+                <span class="inline-flex items-center gap-1 text-[11px] text-emerald-600 font-semibold mt-1">
+                  <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  Validada para pagos tributarios
+                </span>
+              </div>
+            </div>
+
+            <div id="tab-content-contactos" class="tab-content hidden grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div>
+                <span class="text-slate-400 block text-[11px]">Contacto Comercial</span>
+                <strong class="text-slate-800">Mariana Ramos (Jefa de Cuentas)</strong>
+                <span class="text-[11px] text-slate-500 block">mramos@ferreyros.com.pe</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Contacto Facturación</span>
+                <strong class="text-slate-800">Carlos Méndez (Tesorería)</strong>
+                <span class="text-[11px] text-slate-500 block">facturacion@ferreyros.com.pe</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-[11px]">Central de Soporte</span>
+                <strong class="text-slate-800">+51 (01) 626-4000</strong>
+              </div>
+            </div>
+
+            <div id="tab-content-documentos" class="tab-content hidden grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div class="p-2.5 bg-white rounded border border-slate-200 flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                  Ficha_RUC_2026.pdf
+                </span>
+                <span class="text-emerald-600 font-bold">Válido</span>
+              </div>
+              <div class="p-2.5 bg-white rounded border border-slate-200 flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                  DNI_Representante.pdf
+                </span>
+                <span class="text-emerald-600 font-bold">Válido</span>
+              </div>
+              <div class="p-2.5 bg-white rounded border border-slate-200 flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                  Vigencia_Poder.pdf
+                </span>
+                <span class="text-emerald-600 font-bold">Válido</span>
+              </div>
+              <div class="p-2.5 bg-white rounded border border-slate-200 flex items-center justify-between">
+                <span class="inline-flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
+                  Certificado_ISO.pdf
+                </span>
+                <span class="text-emerald-600 font-bold">Válido</span>
+              </div>
+            </div>
+
+            <div id="tab-content-historial" class="tab-content hidden space-y-2">
+              <div class="flex items-center justify-between text-slate-700 bg-white p-2.5 rounded border border-slate-200">
+                <span><strong>Aprobado por:</strong> Luis Gómez (Jefe de Compras)</span>
+                <span class="text-slate-400 font-mono">14/08/2026 10:45 AM</span>
+              </div>
+              <div class="text-[11px] text-slate-500 italic pl-2">
+                Nota: "Documentación bancaria y RUC verificados. Línea de crédito aprobada a 30 días."
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 6. MÉTRICAS DE IMPACTO & ROI */}
+    <section id="roi" class="py-20 bg-slate-900 text-white">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
+        <div class="max-w-2xl space-y-3">
+          <div class="text-xs font-mono uppercase tracking-wider text-blue-400 font-bold">
+            Retorno de Inversión Comprobado
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-white">
+            Eficiencia operativa medible desde el primer mes.
+          </h2>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Transforma las horas invertidas en correos y validaciones manuales en decisiones estratégicas de compra.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
+            <div class="text-4xl font-bold text-emerald-400 font-mono">-80%</div>
+            <h3 class="font-bold text-sm text-white">Tiempo de Homologación</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              De 20 días de intercambio de correos a un promedio menor a 48 horas hábiles.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
+            <div class="text-4xl font-bold text-blue-400 font-mono">100%</div>
+            <h3 class="font-bold text-sm text-white">Blindaje en Transferencias</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Cero errores de pago gracias a la validación de cuenta corriente, CCI y detracciones.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
+            <div class="text-4xl font-bold text-amber-400 font-mono">12 hrs</div>
+            <h3 class="font-bold text-sm text-white">Ahorradas por Comprador</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Eliminación de tareas repetitivas de revisión de expedientes y búsqueda en carpetas.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700 space-y-2">
+            <div class="text-4xl font-bold text-purple-400 font-mono">0 Papel</div>
+            <h3 class="font-bold text-sm text-white">Auditoría Permanente</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              100% expedientes digitales listos para revisiones tributarias de SUNAT y certificaciones ISO.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 7. PROCESO DE IMPLEMENTACIÓN EN 4 PASOS */}
+    <section class="py-20 bg-white border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
+        <div class="max-w-2xl space-y-3">
+          <div class="text-xs font-mono uppercase tracking-wider text-blue-600 font-bold">
+            Puesta en Marcha Rápida
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            Operativo en solo 5 días hábiles.
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Sin largos proyectos de consultoría ni costos imprevistos de infraestructura.
+          </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-4">
+          <div class="p-6 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
+            <span class="text-xs font-mono font-bold text-blue-600">DÍA 1 - 2</span>
+            <h3 class="font-bold text-base text-slate-900">1. Definición y Marca</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Configuramos tu logotipo oficial, colores institucionales, familias de compra y requisitos documentales.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
+            <span class="text-xs font-mono font-bold text-blue-600">DÍA 3 - 4</span>
+            <h3 class="font-bold text-base text-slate-900">2. Habilitación de Entorno</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Despliegue de tu portal dedicado, base de datos PostgreSQL, almacenamiento MinIO y cuentas de usuario.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl border border-slate-200 bg-slate-50 space-y-3">
+            <span class="text-xs font-mono font-bold text-blue-600">DÍA 5</span>
+            <h3 class="font-bold text-base text-slate-900">3. Capacitación Operativa</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Sesión práctica guiada de 60 minutos con tu equipo de compras, logística y administración.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-xl border border-emerald-200 bg-emerald-50/50 space-y-3">
+            <span class="text-xs font-mono font-bold text-emerald-600">PRODUCCIÓN</span>
+            <h3 class="font-bold text-base text-slate-900">4. ¡En Producción!</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Envío del enlace oficial para que tus proveedores comiencen a homologarse de forma inmediata.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 8. PLANES COMERCIALES */}
+    <section id="planes" class="py-20 bg-slate-50 border-b border-slate-200">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 space-y-12">
+        <div class="max-w-2xl space-y-3">
+          <div class="text-xs font-mono uppercase tracking-wider text-blue-600 font-bold">
+            Esquemas de Licenciamiento
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            Planes flexibles adaptados a la escala de tu empresa.
+          </h2>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Sin cobros por transacción ni tarifas ocultas a los proveedores.
+          </p>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-3 items-stretch">
+          {/* Plan 1 */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-8 space-y-6 flex flex-col justify-between shadow-sm">
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <h3 class="font-bold text-xl text-slate-900">Plan Professional</h3>
+                <p class="text-xs text-slate-500">Medianas empresas en proceso de estandarización</p>
+              </div>
+              <div class="text-xs font-mono text-slate-600 font-semibold">Hasta 250 Proveedores Activos</div>
+              <ul class="space-y-2.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Hasta 5 usuarios administradores</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Logotipo y colores corporativos</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>50 GB almacenamiento en MinIO</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Exportación de datos estructurada</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Soporte estándar 8x5</span>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#demo-form"
+              class="w-full text-center py-2.5 px-4 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-300 rounded-xl transition-colors block"
+            >
+              Solicitar Plan Professional
+            </a>
+          </div>
+
+          {/* Plan 2: Enterprise (Destacado) */}
+          <div class="rounded-2xl border-2 border-blue-600 bg-white p-8 space-y-6 flex flex-col justify-between shadow-lg relative">
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-blue-600 text-white text-[10px] font-bold uppercase tracking-wider">
+              Más Popular
+            </div>
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <h3 class="font-bold text-xl text-slate-900">Plan Enterprise</h3>
+                <p class="text-xs text-slate-500">Corporaciones y operaciones de alto volumen</p>
+              </div>
+              <div class="text-xs font-mono text-blue-600 font-bold">Proveedores Ilimitados</div>
+              <ul class="space-y-2.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Usuarios administradores ilimitados</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Dominio propio (proveedores.tuempresa.com)</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>500 GB almacenamiento seguro</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>API REST y Webhooks para integración ERP</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Soporte prioritario con SLA de 4 horas</span>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#demo-form"
+              class="w-full text-center py-2.5 px-4 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-all shadow-sm block"
+            >
+              Cotizar Plan Enterprise
+            </a>
+          </div>
+
+          {/* Plan 3: Dedicated */}
+          <div class="rounded-2xl border border-slate-200 bg-white p-8 space-y-6 flex flex-col justify-between shadow-sm">
+            <div class="space-y-4">
+              <div class="space-y-1">
+                <h3 class="font-bold text-xl text-slate-900">Dedicated / On-Premise</h3>
+                <p class="text-xs text-slate-500">Grupos corporativos y mineras con estricta política TI</p>
+              </div>
+              <div class="text-xs font-mono text-slate-600 font-semibold">Nube Privada o Infraestructura Propia</div>
+              <ul class="space-y-2.5 text-xs text-slate-700 pt-2 border-t border-slate-100">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Instancia 100% aislada en tu nube privada</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Conectores a medida para SAP / Oracle</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Personalización profunda de flujos y código</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>Ingeniero de soporte y arquitectura asignado</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                  </svg>
+                  <span>SLA crítico de 1 hora</span>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="#demo-form"
+              class="w-full text-center py-2.5 px-4 text-xs font-semibold text-slate-700 bg-slate-50 hover:bg-slate-100 border border-slate-300 rounded-xl transition-colors block"
+            >
+              Hablar con Especialista TI
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 9. PREGUNTAS FRECUENTES */}
+    <section id="faq" class="py-20 bg-white border-b border-slate-200">
+      <div class="mx-auto max-w-4xl px-6 space-y-10">
+        <div class="space-y-3 text-center">
+          <div class="text-xs font-mono uppercase tracking-wider text-blue-600 font-bold">
+            Resolución de Dudas
+          </div>
+          <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+            Preguntas Frecuentes
+          </h2>
+          <p class="text-sm text-slate-600">
+            Todo lo que necesitas saber sobre la adopción y seguridad de la plataforma.
+          </p>
+        </div>
+
+        <div class="divide-y divide-slate-200 border-y border-slate-200" id="faq-container">
+          <div class="py-5 faq-item">
+            <button class="faq-btn w-full flex items-center justify-between text-left gap-4 font-semibold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition-colors cursor-pointer">
+              <span>¿Los proveedores de nuestra empresa deben pagar alguna membresía?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pr-6">
+              No. El acceso y registro para los proveedores es completamente gratuito e ilimitado. Esto garantiza que la tasa de adopción sea inmediata y ningún proveedor quede fuera por barreras de costo.
+            </div>
+          </div>
+
+          <div class="py-5 faq-item">
+            <button class="faq-btn w-full flex items-center justify-between text-left gap-4 font-semibold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition-colors cursor-pointer">
+              <span>¿El sistema cumple con la normativa legal y tributaria peruana?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pr-6">
+              Totalmente. La plataforma valida la estructura de RUC de 11 dígitos, datos de Representante Legal con DNI, verificación de cuentas de detracción del Banco de la Nación y resguardo de vigencias de poder según estándares de SUNAT y notariales.
+            </div>
+          </div>
+
+          <div class="py-5 faq-item">
+            <button class="faq-btn w-full flex items-center justify-between text-left gap-4 font-semibold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition-colors cursor-pointer">
+              <span>¿Se puede integrar el portal con nuestro ERP (SAP, Oracle, Spring, Dynamics)?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pr-6">
+              Sí. Contamos con endpoints API REST seguros y módulos de exportación periódica en formatos estructurados para alimentar automáticamente el maestro de proveedores en tu sistema ERP una vez aprobados.
+            </div>
+          </div>
+
+          <div class="py-5 faq-item">
+            <button class="faq-btn w-full flex items-center justify-between text-left gap-4 font-semibold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition-colors cursor-pointer">
+              <span>¿Dónde y cómo se resguardan los documentos confidenciales?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pr-6">
+              Utilizamos infraestructura de almacenamiento de objetos MinIO / S3 con cifrado en reposo y en tránsito (TLS/HTTPS). La base de datos PostgreSQL cuenta con autenticación segura bajo hash scrypt, aislando los expedientes bancarios y legales.
+            </div>
+          </div>
+
+          <div class="py-5 faq-item">
+            <button class="faq-btn w-full flex items-center justify-between text-left gap-4 font-semibold text-slate-900 text-sm sm:text-base hover:text-blue-600 transition-colors cursor-pointer">
+              <span>¿Cuánto tiempo toma la puesta en marcha con nuestra marca?</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div class="faq-answer hidden mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed pr-6">
+              El despliegue estándar toma 5 días hábiles: configuramos tu dominio personalizado (proveedores.tuempresa.com), logotipo, paleta corporativa, catálogo de familias de compra y requisitos documentales.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* 10. FORMULARIO DE DEMOSTRACIÓN (LEAD CAPTURE) */}
+    <section id="demo-form" class="py-20 bg-slate-50">
+      <div class="mx-auto max-w-5xl px-6">
+        <div class="rounded-3xl border border-slate-200 bg-white p-8 sm:p-12 lg:p-14 shadow-lg grid gap-10 lg:grid-cols-12 items-center">
+          {/* Left Info Column */}
+          <div class="lg:col-span-5 space-y-6">
+            <div class="space-y-3">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-xs font-semibold">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                </svg>
+                Demostración 1 a 1
+              </div>
+              <h2 class="text-3xl font-bold tracking-tight text-slate-950 sm:text-4xl">
+                Moderniza tus compras hoy mismo.
+              </h2>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                Agenda una presentación técnica y comercial de 20 minutos con nuestros especialistas en abastecimiento.
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-2 text-xs text-slate-600">
+              <div class="flex items-center gap-3">
+                <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Demostración en vivo con tu flujo de compras</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Propuesta económica estimada en la misma llamada</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                </svg>
+                <span>Sin compromiso de permanencia</span>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs space-y-1">
+              <div class="font-semibold text-slate-800">Atención Directa:</div>
+              <div class="text-slate-600">comercial@logisperu.pe</div>
+              <div class="text-slate-600">+51 (01) 700-5644 (Lima, Perú)</div>
+            </div>
+          </div>
+
+          {/* Right Form Column */}
+          <div class="lg:col-span-7">
+            <div id="form-success-box" class="hidden p-8 rounded-2xl bg-emerald-50 border border-emerald-200 text-center space-y-4">
+              <div class="h-12 w-12 rounded-full bg-emerald-600 text-white flex items-center justify-center mx-auto text-xl font-bold">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-emerald-950">¡Solicitud Enviada con Éxito!</h3>
+              <p class="text-xs text-emerald-800 leading-relaxed max-w-md mx-auto">
+                Hemos recibido tus datos corporativos. Un especialista de LOGISPERÚ te contactará hoy mismo para coordinar la demostración.
+              </p>
+            </div>
+
+            <form id="lead-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-700">Nombre Completo *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Ej: Carlos Vega"
+                    class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-700">Correo Corporativo *</label>
+                  <input
+                    type="email"
+                    required
+                    placeholder="cvega@tuempresa.com"
+                    class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-700">Teléfono / WhatsApp *</label>
+                  <input
+                    type="tel"
+                    required
+                    placeholder="+51 987 654 321"
+                    class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  />
+                </div>
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-700">Empresa / Razón Social *</label>
+                  <input
+                    type="text"
+                    required
+                    placeholder="Tu Empresa S.A.C."
+                    class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2.5 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-700">Cargo / Área</label>
+                  <select
+                    class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  >
+                    <option value="Gerente de Compras">Gerente de Compras / Abastecimiento</option>
+                    <option value="Jefe de Logística">Jefe de Logística / Cadena de Suministro</option>
+                    <option value="Finanzas / Tesorería">Finanzas / Tesorería / Contabilidad</option>
+                    <option value="TI / Sistemas">TI / Sistemas / Transformación Digital</option>
+                    <option value="Gerencia General">Gerencia General / Dirección</option>
+                  </select>
+                </div>
+                <div class="space-y-1.5">
+                  <label class="text-xs font-semibold text-slate-700">Volumen de Proveedores</label>
+                  <select
+                    class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 px-3 py-2 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600"
+                  >
+                    <option value="Menos de 100">Menos de 100 proveedores</option>
+                    <option value="100 a 500">100 a 500 proveedores</option>
+                    <option value="500 a 2,000">500 a 2,000 proveedores</option>
+                    <option value="Más de 2,000">Más de 2,000 proveedores</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="space-y-1.5">
+                <label class="text-xs font-semibold text-slate-700">Comentario o Requerimiento Específico (Opcional)</label>
+                <textarea
+                  rows="2"
+                  placeholder="Cuéntanos brevemente qué desafíos buscas resolver..."
+                  class="w-full text-xs rounded-md border border-slate-200 bg-slate-50 p-2.5 text-slate-800 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-600 resize-none"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-xs sm:text-sm shadow-md transition-all cursor-pointer"
+              >
+                Solicitar Demostración Comercial
+              </button>
+
+              <p class="text-[10px] text-slate-400 text-center leading-tight">
+                Información 100% confidencial bajo la Ley N° 29733 de Protección de Datos Personales del Perú.
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {/* 11. FOOTER INSTITUCIONAL */}
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 py-12 space-y-8">
+      <div class="grid gap-8 grid-cols-2 md:grid-cols-4">
+        {/* Col 1 */}
+        <div class="space-y-3 col-span-2 md:col-span-1">
+          <img src="/LOGISPERULOGO.svg" alt="LOGISPERÚ" class="h-8 w-auto object-contain" />
+          <p class="text-xs text-slate-500 leading-relaxed">
+            Plataformas tecnológicas para la gestión de proveedores, homologación digital y cadena de suministro en el Perú.
+          </p>
+        </div>
+
+        {/* Col 2 */}
+        <div class="space-y-2 text-xs">
+          <div class="font-bold text-slate-900 uppercase tracking-wider text-[11px]">Plataforma</div>
+          <ul class="space-y-1.5 text-slate-600">
+            <li><a href="#modulos" class="hover:text-blue-600">Onboarding en 6 Pasos</a></li>
+            <li><a href="#modulos" class="hover:text-blue-600">Perfil 360° y Auditoría</a></li>
+            <li><a href="#modulos" class="hover:text-blue-600">Catálogos de Suministro</a></li>
+            <li><a href="#modulos" class="hover:text-blue-600">Marca Blanca</a></li>
+          </ul>
+        </div>
+
+        {/* Col 3 */}
+        <div class="space-y-2 text-xs">
+          <div class="font-bold text-slate-900 uppercase tracking-wider text-[11px]">Sectores</div>
+          <ul class="space-y-1.5 text-slate-600">
+            <li><a href="#sectores" class="hover:text-blue-600">Construcción & Obras</a></li>
+            <li><a href="#sectores" class="hover:text-blue-600">Minería & Energía</a></li>
+            <li><a href="#sectores" class="hover:text-blue-600">Operadores Logísticos</a></li>
+            <li><a href="#sectores" class="hover:text-blue-600">Agroindustria & Retail</a></li>
+          </ul>
+        </div>
+
+        {/* Col 4 */}
+        <div class="space-y-2 text-xs">
+          <div class="font-bold text-slate-900 uppercase tracking-wider text-[11px]">Contacto</div>
+          <div class="text-slate-600 space-y-1">
+            <div>Av. República de Panamá 3418</div>
+            <div>San Isidro, Lima - Perú</div>
+            <div>comercial@logisperu.pe</div>
+            <div>+51 (01) 700-5644</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>© {new Date().getFullYear()} LOGISPERÚ S.A.C. Todos los derechos reservados.</div>
+        <div class="flex items-center gap-6">
+          <span class="hover:text-slate-700 cursor-pointer">Términos de Servicio</span>
+          <span class="hover:text-slate-700 cursor-pointer">Política de Privacidad</span>
+          <span class="hover:text-slate-700 cursor-pointer">Libro de Reclamaciones</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {/* Client-side interactions script */}
+  <script>
+    // 360° Profile tab switcher
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const tabId = btn.getAttribute('data-tab');
+
+        // Update button styles
+        tabButtons.forEach((b) => {
+          b.classList.remove('bg-slate-900', 'text-white', 'shadow-sm');
+          b.classList.add('bg-slate-100', 'text-slate-600');
+        });
+        btn.classList.add('bg-slate-900', 'text-white', 'shadow-sm');
+        btn.classList.remove('bg-slate-100', 'text-slate-600');
+
+        // Show/hide tab contents
+        tabContents.forEach((c) => {
+          c.classList.add('hidden');
+        });
+        const activeContent = document.getElementById(`tab-content-${tabId}`);
+        if (activeContent) {
+          activeContent.classList.remove('hidden');
+        }
+      });
+    });
+
+    // FAQ Accordion with smooth SVG rotation
+    const faqButtons = document.querySelectorAll('.faq-btn');
+    faqButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const answer = item?.querySelector('.faq-answer');
+        const icon = item?.querySelector('.faq-icon');
+
+        if (answer) {
+          const isHidden = answer.classList.contains('hidden');
+          answer.classList.toggle('hidden');
+          if (icon) {
+            if (isHidden) {
+              icon.classList.add('rotate-180', 'text-blue-600');
+              icon.classList.remove('text-slate-400');
+            } else {
+              icon.classList.remove('rotate-180', 'text-blue-600');
+              icon.classList.add('text-slate-400');
+            }
+          }
+        }
+      });
+    });
+
+    // Lead Form Handler
+    const leadForm = document.getElementById('lead-form');
+    const successBox = document.getElementById('form-success-box');
+    if (leadForm && successBox) {
+      leadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        leadForm.classList.add('hidden');
+        successBox.classList.remove('hidden');
+      });
+    }
+  </script>
 </Layout>
